@@ -3,8 +3,7 @@ import Vuetify from 'vuetify/lib/framework';
 import colors from 'vuetify/lib/util/colors'
 
 Vue.use(Vuetify);
-
-export default new Vuetify({
+const config = new Vuetify({
     theme: {
         themes: {
           light: {
@@ -15,3 +14,8 @@ export default new Vuetify({
         },
       },
 });
+export default config;
+
+export const frameworkConfig =  {
+  vuetify : config
+}

@@ -14,6 +14,7 @@ module.exports = {
           "./DSInput": "./src/components/DSInput",
           "./DSButton": "./src/components/DSButton",
           "./DSUserPicture": "./src/components/DSUserPicture",
+          "./DSConfig" : "./src/plugins/vuetify"
         },
         shared: require("./package.json").dependencies,
       }),

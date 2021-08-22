@@ -1,6 +1,6 @@
 <template>
   <VBtn
-    color="primary"
+    :color="color"
     v-bind="{ ...$props, ...$attrs }"
     v-on="$listeners"
     dense
@@ -22,6 +22,12 @@
 export default {
   name: "DSButton",
   inheritAttrs: false,
+  props: {
+    color: {
+      type: String,
+      default: "primary",
+    },
+  },
 };
 </script>
 <style lang="scss" scoped>
