@@ -1,5 +1,6 @@
 const ModuleFederationPlugin = require("webpack").container
   .ModuleFederationPlugin;
+  const dependencies = require("./package.json").dependencies;
 
 module.exports = {
   publicPath: process.env.PUBLIC_PATH,
@@ -14,14 +15,21 @@ module.exports = {
           "./DSInput": "./src/components/DSInput",
           "./DSButton": "./src/components/DSButton",
           "./DSUserPicture": "./src/components/DSUserPicture",
-          "./DSConfig" : "./src/plugins/vuetify"
+          "./DSConfig": "./src/plugins/vuetify",
         },
-        shared: require("./package.json").dependencies,
+        shared: {
+          ...dependencies,
+          vuetify: {
+            singleton: true,
+          },
+          vue: {
+            singleton: true,
+          }
+        },
       }),
     ],
   },
   devServer: {
     port: 3007,
-    progress: false,
   },
 };
